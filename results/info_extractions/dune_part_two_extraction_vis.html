@@ -1,0 +1,202 @@
+<style>
+.lx-highlight { position: relative; border-radius:3px; padding:1px 2px;}
+.lx-highlight .lx-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  background: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 4px;
+  padding: 6px 8px;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  max-width: 240px;
+  white-space: normal;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.lx-highlight:hover .lx-tooltip { visibility: visible; opacity:1; }
+.lx-animated-wrapper { max-width: 100%; font-family: Arial, sans-serif; }
+.lx-controls {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 8px;
+  padding: 12px; margin-bottom: 16px;
+}
+.lx-button-row {
+  display: flex; justify-content: center; gap: 8px; margin-bottom: 12px;
+}
+.lx-control-btn {
+  background: #4285f4; color: white; border: none; border-radius: 4px;
+  padding: 8px 16px; cursor: pointer; font-size: 13px; font-weight: 500;
+  transition: background-color 0.2s;
+}
+.lx-control-btn:hover { background: #3367d6; }
+.lx-progress-container {
+  margin-bottom: 8px;
+}
+.lx-progress-slider {
+  width: 100%; margin: 0; appearance: none; height: 6px;
+  background: #ddd; border-radius: 3px; outline: none;
+}
+.lx-progress-slider::-webkit-slider-thumb {
+  appearance: none; width: 18px; height: 18px; background: #4285f4;
+  border-radius: 50%; cursor: pointer;
+}
+.lx-progress-slider::-moz-range-thumb {
+  width: 18px; height: 18px; background: #4285f4; border-radius: 50%;
+  cursor: pointer; border: none;
+}
+.lx-status-text {
+  text-align: center; font-size: 12px; color: #666; margin-top: 4px;
+}
+.lx-text-window {
+  font-family: monospace; white-space: pre-wrap; border: 1px solid #90caf9;
+  padding: 12px; max-height: 260px; overflow-y: auto; margin-bottom: 12px;
+  line-height: 1.6;
+}
+.lx-attributes-panel {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 6px;
+  padding: 8px 10px; margin-top: 8px; font-size: 13px;
+}
+.lx-current-highlight {
+  border-bottom: 4px solid #ff4444;
+  font-weight: bold;
+  animation: lx-pulse 1s ease-in-out;
+}
+@keyframes lx-pulse {
+  0% { text-decoration-color: #ff4444; }
+  50% { text-decoration-color: #ff0000; }
+  100% { text-decoration-color: #ff4444; }
+}
+.lx-legend {
+  font-size: 12px; margin-bottom: 8px;
+  padding-bottom: 8px; border-bottom: 1px solid #e0e0e0;
+}
+.lx-label {
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-right: 4px;
+  color: #000;
+}
+.lx-attr-key {
+  font-weight: 600;
+  color: #1565c0;
+  letter-spacing: 0.3px;
+}
+.lx-attr-value {
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 0.2px;
+}
+
+/* Add optimizations with larger fonts and better readability for GIFs */
+.lx-gif-optimized .lx-text-window { font-size: 16px; line-height: 1.8; }
+.lx-gif-optimized .lx-attributes-panel { font-size: 15px; }
+.lx-gif-optimized .lx-current-highlight { text-decoration-thickness: 4px; }
+</style>
+    <div class="lx-animated-wrapper lx-gif-optimized">
+      <div class="lx-attributes-panel">
+        <div class="lx-legend">Highlights Legend: <span class="lx-label" style="background-color:#D2E3FC;">audience_impact</span> <span class="lx-label" style="background-color:#C8E6C9;">opinion_statement</span></div>
+        <div id="attributesContainer"></div>
+      </div>
+      <div class="lx-text-window" id="textWindow">
+        **Page 1**
+&quot;&quot;&quot;
+Movie Review: Dune: Part Two
+Director Denis Villeneuve has somehow outdone himself on this one, delivering a movie that feels <span class="lx-highlight lx-current-highlight" data-idx="0" style="background-color:#C8E6C9;">massive in scope, yet intimate and personal in its story</span>.
+It is insurmountably challenging not to be romantic about these films. From the sweeping soundscapes to the larger-than-life imagery, Dune dares you not to disappear into its <span class="lx-highlight" data-idx="1" style="background-color:#C8E6C9;">breathtakingly exotic world</span>.
+Timothée Chalamet returns as Paul Atreides, giving <span class="lx-highlight" data-idx="2" style="background-color:#C8E6C9;">a layered performance</span>. <span class="lx-highlight" data-idx="3" style="background-color:#C8E6C9;">The script challenges the audience</span> with him in particular.
+There is also a love story with the <span class="lx-highlight" data-idx="4" style="background-color:#C8E6C9;">wonderful Zendaya</span>, playing Chani. She is given <span class="lx-highlight" data-idx="5" style="background-color:#C8E6C9;">so much agency and identity</span> that it feels like a completely different character from the book, operating as her own person rather than just a love interest.
+This results in <span class="lx-highlight" data-idx="6" style="background-color:#C8E6C9;">an interesting tug-of-war</span> in not only Paul and Chani but the entire Fremen race.
+The only area I&#x27;d say the film didn&#x27;t wow me was the score. I enjoyed Hans Zimmer&#x27;s soundtrack for the first Dune, but <span class="lx-highlight" data-idx="7" style="background-color:#C8E6C9;">nothing really in Part Two jumped out and registered with me</span>. <span class="lx-highlight" data-idx="8" style="background-color:#C8E6C9;">It&#x27;s not bad by any means, it just didn&#x27;t strike me like the first one did</span>.
+However, <span class="lx-highlight" data-idx="9" style="background-color:#C8E6C9;">the overall sound design was nuts</span>, especially with the IMAX speakers, which <span class="lx-highlight" data-idx="10" style="background-color:#D2E3FC;">caused the bassy vibrations to literally shake my core in one scene</span>.
+Austin Butler embodies the villainous role of Feyd-Rautha; he is <span class="lx-highlight" data-idx="11" style="background-color:#C8E6C9;">a force to be reckoned with</span>, <span class="lx-highlight" data-idx="12" style="background-color:#C8E6C9;"><span class="lx-highlight" data-idx="13" style="background-color:#D2E3FC;">striking fear into the hearts of the other characters and the audience</span></span>.
+Villeneuve’s hand with it all is <span class="lx-highlight" data-idx="14" style="background-color:#C8E6C9;">an elegant sledgehammer</span>, <span class="lx-highlight" data-idx="15" style="background-color:#C8E6C9;"><span class="lx-highlight" data-idx="16" style="background-color:#D2E3FC;">bashing us around the head about things we should already be able to see for ourselves but clearly can’t</span></span>.
+&quot;&quot;&quot;
+
+      </div>
+      <div class="lx-controls">
+        <div class="lx-button-row">
+          <button class="lx-control-btn" onclick="playPause()">▶️ Play</button>
+          <button class="lx-control-btn" onclick="prevExtraction()">⏮ Previous</button>
+          <button class="lx-control-btn" onclick="nextExtraction()">⏭ Next</button>
+        </div>
+        <div class="lx-progress-container">
+          <input type="range" id="progressSlider" class="lx-progress-slider"
+                 min="0" max="16" value="0"
+                 onchange="jumpToExtraction(this.value)">
+        </div>
+        <div class="lx-status-text">
+          Entity <span id="entityInfo">1/17</span> |
+          Pos <span id="posInfo">[141-197]</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const extractions = [{"index": 0, "class": "opinion_statement", "text": "massive in scope, yet intimate and personal in its story", "color": "#C8E6C9", "startPos": 141, "endPos": 197, "beforeText": "**Page 1**\n&quot;&quot;&quot;\nMovie Review: Dune: Part Two\nDirector Denis Villeneuve has somehow outdone himself on this one, delivering a movie that feels ", "extractionText": "massive in scope, yet intimate and personal in its story", "afterText": ".\nIt is insurmountably challenging not to be romantic about these films. From the sweeping soundscapes to the larger-than-life imagery, Dune dares you", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The movie</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">massive in scope, yet intimate and personal</span>}</div>"}, {"index": 1, "class": "opinion_statement", "text": "breathtakingly exotic world", "color": "#C8E6C9", "startPos": 374, "endPos": 401, "beforeText": "lenging not to be romantic about these films. From the sweeping soundscapes to the larger-than-life imagery, Dune dares you not to disappear into its ", "extractionText": "breathtakingly exotic world", "afterText": ".\nTimoth\u00e9e Chalamet returns as Paul Atreides, giving a layered performance. The script challenges the audience with him in particular.\nThere is also a", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The world</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">breathtakingly exotic</span>}</div>"}, {"index": 2, "class": "opinion_statement", "text": "a layered performance", "color": "#C8E6C9", "startPos": 454, "endPos": 475, "beforeText": "he larger-than-life imagery, Dune dares you not to disappear into its breathtakingly exotic world.\nTimoth\u00e9e Chalamet returns as Paul Atreides, giving ", "extractionText": "a layered performance", "afterText": ". The script challenges the audience with him in particular.\nThere is also a love story with the wonderful Zendaya, playing Chani. She is given so muc", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Timoth\u00e9e Chalamet&#x27;s performance</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">layered</span>}</div>"}, {"index": 3, "class": "opinion_statement", "text": "The script challenges the audience", "color": "#C8E6C9", "startPos": 477, "endPos": 511, "beforeText": "gery, Dune dares you not to disappear into its breathtakingly exotic world.\nTimoth\u00e9e Chalamet returns as Paul Atreides, giving a layered performance. ", "extractionText": "The script challenges the audience", "afterText": " with him in particular.\nThere is also a love story with the wonderful Zendaya, playing Chani. She is given so much agency and identity that it feels ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The script</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Neutral</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">challenges the audience</span>}</div>"}, {"index": 4, "class": "opinion_statement", "text": "wonderful Zendaya", "color": "#C8E6C9", "startPos": 572, "endPos": 589, "beforeText": "eturns as Paul Atreides, giving a layered performance. The script challenges the audience with him in particular.\nThere is also a love story with the ", "extractionText": "wonderful Zendaya", "afterText": ", playing Chani. She is given so much agency and identity that it feels like a completely different character from the book, operating as her own pers", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Zendaya</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">wonderful</span>}</div>"}, {"index": 5, "class": "opinion_statement", "text": "so much agency and identity", "color": "#C8E6C9", "startPos": 619, "endPos": 646, "beforeText": "rmance. The script challenges the audience with him in particular.\nThere is also a love story with the wonderful Zendaya, playing Chani. She is given ", "extractionText": "so much agency and identity", "afterText": " that it feels like a completely different character from the book, operating as her own person rather than just a love interest.\nThis results in an i", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Chani&#x27;s character</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">so much agency and identity</span>}</div>"}, {"index": 6, "class": "opinion_statement", "text": "an interesting tug-of-war", "color": "#C8E6C9", "startPos": 792, "endPos": 817, "beforeText": "tity that it feels like a completely different character from the book, operating as her own person rather than just a love interest.\nThis results in ", "extractionText": "an interesting tug-of-war", "afterText": " in not only Paul and Chani but the entire Fremen race.\nThe only area I&#x27;d say the film didn&#x27;t wow me was the score. I enjoyed Hans Zimmer&#x27;s soundtrack", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The relationship between Paul and Chani and the Fremen race</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">interesting tug-of-war</span>}</div>"}, {"index": 7, "class": "opinion_statement", "text": "nothing really in Part Two jumped out and registered with me", "color": "#C8E6C9", "startPos": 992, "endPos": 1052, "beforeText": "ni but the entire Fremen race.\nThe only area I&#x27;d say the film didn&#x27;t wow me was the score. I enjoyed Hans Zimmer&#x27;s soundtrack for the first Dune, but ", "extractionText": "nothing really in Part Two jumped out and registered with me", "afterText": ". It&#x27;s not bad by any means, it just didn&#x27;t strike me like the first one did.\nHowever, the overall sound design was nuts, especially with the IMAX spe", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The score</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">nothing really jumped out and registered</span>}</div>"}, {"index": 8, "class": "opinion_statement", "text": "It's not bad by any means, it just didn't strike me like the first one did", "color": "#C8E6C9", "startPos": 1054, "endPos": 1128, "beforeText": "didn&#x27;t wow me was the score. I enjoyed Hans Zimmer&#x27;s soundtrack for the first Dune, but nothing really in Part Two jumped out and registered with me. ", "extractionText": "It&#x27;s not bad by any means, it just didn&#x27;t strike me like the first one did", "afterText": ".\nHowever, the overall sound design was nuts, especially with the IMAX speakers, which caused the bassy vibrations to literally shake my core in one s", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The score</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Neutral</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">didn&#x27;t strike me like the first one did</span>}</div>"}, {"index": 9, "class": "opinion_statement", "text": "the overall sound design was nuts", "color": "#C8E6C9", "startPos": 1139, "endPos": 1172, "beforeText": "ut nothing really in Part Two jumped out and registered with me. It&#x27;s not bad by any means, it just didn&#x27;t strike me like the first one did.\nHowever, ", "extractionText": "the overall sound design was nuts", "afterText": ", especially with the IMAX speakers, which caused the bassy vibrations to literally shake my core in one scene.\nAustin Butler embodies the villainous ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The sound design</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">nuts</span>}</div>"}, {"index": 10, "class": "audience_impact", "text": "caused the bassy vibrations to literally shake my core in one scene", "color": "#D2E3FC", "startPos": 1215, "endPos": 1282, "beforeText": "d by any means, it just didn&#x27;t strike me like the first one did.\nHowever, the overall sound design was nuts, especially with the IMAX speakers, which ", "extractionText": "caused the bassy vibrations to literally shake my core in one scene", "afterText": ".\nAustin Butler embodies the villainous role of Feyd-Rautha; he is a force to be reckoned with, striking fear into the hearts of the other characters ", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">physical sensation, shock</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">bassy vibrations from the IMAX speakers</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the reviewer</span>}</div>"}, {"index": 11, "class": "opinion_statement", "text": "a force to be reckoned with", "color": "#C8E6C9", "startPos": 1349, "endPos": 1376, "beforeText": "speakers, which caused the bassy vibrations to literally shake my core in one scene.\nAustin Butler embodies the villainous role of Feyd-Rautha; he is ", "extractionText": "a force to be reckoned with", "afterText": ", striking fear into the hearts of the other characters and the audience.\nVilleneuve\u2019s hand with it all is an elegant sledgehammer, bashing us around ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Austin Butler as Feyd-Rautha</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">a force to be reckoned with</span>}</div>"}, {"index": 12, "class": "opinion_statement", "text": "striking fear into the hearts of the other characters and the audience", "color": "#C8E6C9", "startPos": 1378, "endPos": 1448, "beforeText": "ssy vibrations to literally shake my core in one scene.\nAustin Butler embodies the villainous role of Feyd-Rautha; he is a force to be reckoned with, ", "extractionText": "striking fear into the hearts of the other characters and the audience", "afterText": ".\nVilleneuve\u2019s hand with it all is an elegant sledgehammer, bashing us around the head about things we should already be able to see for ourselves but", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Austin Butler as Feyd-Rautha</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">striking fear</span>}</div>"}, {"index": 13, "class": "audience_impact", "text": "striking fear into the hearts of the other characters and the audience", "color": "#D2E3FC", "startPos": 1378, "endPos": 1448, "beforeText": "ssy vibrations to literally shake my core in one scene.\nAustin Butler embodies the villainous role of Feyd-Rautha; he is a force to be reckoned with, ", "extractionText": "striking fear into the hearts of the other characters and the audience", "afterText": ".\nVilleneuve\u2019s hand with it all is an elegant sledgehammer, bashing us around the head about things we should already be able to see for ourselves but", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">fear</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">Austin Butler&#x27;s embodiment of Feyd-Rautha</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the other characters and the audience</span>}</div>"}, {"index": 14, "class": "opinion_statement", "text": "an elegant sledgehammer", "color": "#C8E6C9", "startPos": 1483, "endPos": 1506, "beforeText": "d-Rautha; he is a force to be reckoned with, striking fear into the hearts of the other characters and the audience.\nVilleneuve\u2019s hand with it all is ", "extractionText": "an elegant sledgehammer", "afterText": ", bashing us around the head about things we should already be able to see for ourselves but clearly can\u2019t.\n&quot;&quot;&quot;\n", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Villeneuve&#x27;s direction</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">elegant sledgehammer</span>}</div>"}, {"index": 15, "class": "opinion_statement", "text": "bashing us around the head about things we should already be able to see for ourselves but clearly can\u2019t", "color": "#C8E6C9", "startPos": 1508, "endPos": 1612, "beforeText": "o be reckoned with, striking fear into the hearts of the other characters and the audience.\nVilleneuve\u2019s hand with it all is an elegant sledgehammer, ", "extractionText": "bashing us around the head about things we should already be able to see for ourselves but clearly can\u2019t", "afterText": ".\n&quot;&quot;&quot;\n", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Villeneuve&#x27;s direction</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">bashing us around the head</span>}</div>"}, {"index": 16, "class": "audience_impact", "text": "bashing us around the head about things we should already be able to see for ourselves but clearly can\u2019t", "color": "#D2E3FC", "startPos": 1508, "endPos": 1612, "beforeText": "o be reckoned with, striking fear into the hearts of the other characters and the audience.\nVilleneuve\u2019s hand with it all is an elegant sledgehammer, ", "extractionText": "bashing us around the head about things we should already be able to see for ourselves but clearly can\u2019t", "afterText": ".\n&quot;&quot;&quot;\n", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">frustration, exasperation</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">Villeneuve&#x27;s direction</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">us (the audience)</span>}</div>"}];
+        let currentIndex = 0;
+        let isPlaying = false;
+        let animationInterval = null;
+        let animationSpeed = 1.0;
+
+        function updateDisplay() {
+          const extraction = extractions[currentIndex];
+          if (!extraction) return;
+
+          document.getElementById('attributesContainer').innerHTML = extraction.attributesHtml;
+          document.getElementById('entityInfo').textContent = (currentIndex + 1) + '/' + extractions.length;
+          document.getElementById('posInfo').textContent = '[' + extraction.startPos + '-' + extraction.endPos + ']';
+          document.getElementById('progressSlider').value = currentIndex;
+
+          const playBtn = document.querySelector('.lx-control-btn');
+          if (playBtn) playBtn.textContent = isPlaying ? '⏸ Pause' : '▶️ Play';
+
+          const prevHighlight = document.querySelector('.lx-text-window .lx-current-highlight');
+          if (prevHighlight) prevHighlight.classList.remove('lx-current-highlight');
+          const currentSpan = document.querySelector('.lx-text-window span[data-idx="' + currentIndex + '"]');
+          if (currentSpan) {
+            currentSpan.classList.add('lx-current-highlight');
+            currentSpan.scrollIntoView({block: 'center', behavior: 'smooth'});
+          }
+        }
+
+        function nextExtraction() {
+          currentIndex = (currentIndex + 1) % extractions.length;
+          updateDisplay();
+        }
+
+        function prevExtraction() {
+          currentIndex = (currentIndex - 1 + extractions.length) % extractions.length;
+          updateDisplay();
+        }
+
+        function jumpToExtraction(index) {
+          currentIndex = parseInt(index);
+          updateDisplay();
+        }
+
+        function playPause() {
+          if (isPlaying) {
+            clearInterval(animationInterval);
+            isPlaying = false;
+          } else {
+            animationInterval = setInterval(nextExtraction, animationSpeed * 1000);
+            isPlaying = true;
+          }
+          updateDisplay();
+        }
+
+        window.playPause = playPause;
+        window.nextExtraction = nextExtraction;
+        window.prevExtraction = prevExtraction;
+        window.jumpToExtraction = jumpToExtraction;
+
+        updateDisplay();
+      })();
+    </script>
